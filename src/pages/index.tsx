@@ -1,7 +1,13 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+type Props = {
+  title: string
+}
+
+const foo = 'bla'
+
+export default function Home({ title = 'React Avançado!' }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -10,9 +16,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={styles.title}>{title}</h1>
 
         <p className={styles.description}>
           Get started by editing{' '}
